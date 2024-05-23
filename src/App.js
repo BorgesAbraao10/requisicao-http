@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './style.css';
 
 function App() {
   const [nutri, setNutri] = useState([]);
@@ -24,6 +25,18 @@ function App() {
       <header>
         <strong>React Nutri</strong>
       </header>
+
+      {nutri.map((item)=>{
+        return(
+          <article key={item.id} className="post">
+            <strong className="titulo">{item.titulo}</strong>
+            <img src={item.capa} alt={item.titulo} className="capa"/>
+            <p className="subtitulo">{item.subtitulo}</p>
+            <button className="botao">Acessar</button>
+          </article>
+        )
+      })}
+
     </div>
   );
 }
